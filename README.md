@@ -1,8 +1,8 @@
 # CSE 437S - Scheduler
 
-Scheduler is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+Scheduler is a web application that aggregates all course information for students in one place, automates  the course planning process, and provides a flexible and easy-to-use visual layout.
 
-## User Stories (2-week MVP)
+## Features (2-week MVP)
 
 - [ ] Simple interface to select 2 preset majors, select 2 class allocation options (either to complete as much of 1 major before moving on to the next, or to have an even spread), and select a general credit cap on semesters
 - [ ] Prepopulates 4-year schedule based on the options above (excludes electives
