@@ -1,8 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponseRedirect, HttpResponse
+from django.views.generic import View
+from django.core.urlresolvers import reverse
+from django.views import generic
+from django.utils import timezone
 
-from django.http import HttpResponse
+from .models import Major, Class
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
-
+    return render(request,'scheduler/index.html')

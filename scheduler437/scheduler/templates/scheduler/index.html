@@ -1,3 +1,12 @@
+<!--
+
+Things to do:
+1. Externalize CSS Stylesheet
+2. Update links and provide new views for "About", "Our Founders", "Contact Us"
+
+
+-->
+
 <!DOCTYPE html>
 <head>
 	  <meta charset="utf-8">
@@ -114,6 +123,17 @@ th:hover::after {
   z-index: -1;
 }
 
+[class*='majorChoice'] {
+  float: left;
+}
+
+.majorChoiceOne {
+  width: 50%;
+}
+.majorChoiceTwo {
+  width: 50%;
+}
+
 
 </style>
 
@@ -224,8 +244,42 @@ th:hover::after {
 			</tr>
 			
 	  </table>
-	 
+
+<br>
+<br>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<div class="majorChoiceOne" id="major1class">
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Choose your first major
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Computer Science</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Computer Engineering</a></li>
+      <!--<li role="presentation" class="divider"></li>-->
+      <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>-->
+    </ul>
+  </div>
 </div>
+<div class="majorChoiceTwo" id = "major2class">
+  <div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" id="menu2" type="button" data-toggle="dropdown">Choose your second major
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Computer Science</a></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Computer Engineering</a></li>
+      <!--<li role="presentation" class="divider"></li>-->
+      <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>-->
+    </ul>
+  </div>
+</div>
+</body>
+</html>
 </nav>
 </body>
 </html>
