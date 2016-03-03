@@ -123,24 +123,49 @@ th:hover::after {
   z-index: -1;
 }
 
-[class*='majorChoice'] {
-  float: left;
-}
 
 .majorChoiceOne {
   width: 50%;
 }
 .majorChoiceTwo {
-  width: 50%;
+  width: 100%;
+   margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
 }
-
+form{
+  margin-left: auto;
+    margin-right: auto;
+    text-align: center; 
+}
+.demo select {
+		border: 0 !important;  /*Removes border*/
+		-webkit-appearance: none;  /*Removes default chrome and safari style*/
+		-moz-appearance: none; /* Removes Default Firefox style*/
+        appearance:none;
+		background: #b30000 url(img/select-arrow.png) no-repeat 90% center;
+		width: 200px; /*Width of select dropdown to give space for arrow image*/
+		text-indent: 0.01px; /* Removes default arrow from firefox*/
+		text-overflow: "";  /*Removes default arrow from firefox*/ /*My custom style for fonts*/
+		color: #FFF;
+		border-radius: 15px;
+		padding: 5px;
+		box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);
+	}
+	.demo select.balck {
+		background-color: #000;
+	}
+	.demo select.option3 {
+		border-radius: 10px 0;
+	}
+	
 
 </style>
 
 </head>
 <body> 
 <nav class="fixed-nav-bar">
-	 <img class="logo" alt="image not found" src="institution_logo.png" />
+	 <img class="logo" alt="image not found" src="https://upload.wikimedia.org/wikipedia/en/f/fb/Washington_University_in_St._Louis_logo.png" />
 	  <div class="nav">
 	 <ul>
          <li><a href="#home">HOME</a></li>
@@ -156,6 +181,19 @@ th:hover::after {
 	  <br>
 	  <br>
 	  <br>
+<!-- 
+	  <p> POSSIBLE MAJORS </p>
+	 {% if majors %}
+    	<ul>
+    	{% for major in majors %}
+        	<li>{{ major.majorName }} </li>
+    	{% endfor %}
+   		</ul>
+	{% else %}
+    	<p>No majors are available.</p>
+	{% endif %}
+ -->
+
 	  <div id="page1">
   <a id="home" class="smooth"></a>
 	  <h1> 50 Shades of Webstac</h1>
@@ -248,38 +286,50 @@ th:hover::after {
 <br>
 <br>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-</head>
-<div class="majorChoiceOne" id="major1class">
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" id="menu1" type="button" data-toggle="dropdown">Choose your first major
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Computer Science</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Computer Engineering</a></li>
-      <!--<li role="presentation" class="divider"></li>-->
-      <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>-->
-    </ul>
-  </div>
-</div>
 <div class="majorChoiceTwo" id = "major2class">
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" id="menu2" type="button" data-toggle="dropdown">Choose your second major
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu" role="menu" aria-labelledby="menu2">
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Computer Science</a></li>
-      <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Computer Engineering</a></li>
-      <!--<li role="presentation" class="divider"></li>-->
-      <!--<li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>-->
-    </ul>
-  </div>
+  <form class="demo">
+	<select>
+		<option>Select Your Majors(s) <span class="caret"></span></option>
+		{% if majors %}
+    		{% for major in majors %}
+        		<option>{{ major.majorName }}</option>
+    		{% endfor %}
+		{% else %}
+   				 <option>Error loading </option>
+		{% endif %}
+	</select>
+ <form class="demo">
+	<select>
+		<option>Select Your Minor(s) <span class="caret"></span></option>
+		{% if majors %}
+    		{% for major in majors %}
+        		<option>{{ major.majorName }}</option>
+    		{% endfor %}
+		{% else %}
+   				 <option>Error loading </option>
+		{% endif %}
+	</select>
+	
+</form>
 </div>
+
 </body>
 </html>
 </nav>
+
+<br>
+<br>
+
+    
+<!-- 
+DATA IS BEING SENT
+{% if data %}
+	Hi!
+{% else %}
+	Nothing
+{% endif %}
+ -->
+
 </body>
 </html>
+
